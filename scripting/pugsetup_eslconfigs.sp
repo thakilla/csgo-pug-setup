@@ -14,10 +14,6 @@ public Plugin myinfo = {
     url = "https://github.com/thakilla/csgo-pug-setup"
 };
 
-public void OnPluginStart() {
-	g_hMessageFormat = CreateConVar("sm_pugsetup_eslconfigs_format", "--> Load ESL {TEAMSIZE}on{TEAMSIZE} Config", "Format of the eslconfigs output string.");
-}
-
 public void PugSetup_OnReadyToStart() {
     TeamType teamType;
     MapType mapType;
