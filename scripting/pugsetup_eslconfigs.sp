@@ -14,6 +14,10 @@ public Plugin myinfo = {
     url = "https://github.com/thakilla/csgo-pug-setup"
 };
 
+public void OnPluginStart() {
+    LoadTranslations("pugsetup.eslconfigs.phrases");
+}
+
 public void PugSetup_OnReadyToStart() {
     TeamType teamType;
     MapType mapType;
@@ -28,5 +32,5 @@ public void PugSetup_OnReadyToStart() {
     Format(newConfig, sizeof(newConfig), "live%don%d.cfg", playersPerTeam, playersPerTeam);
     configCvar.SetString(newConfig);
 
-    PugSetup_MessageToAll(playersPerTeam, "LoadESLConfigMessage");
+    PugSetup_MessageToAll("%t", "LoadESLConfigMessage", playersPerTeam);
 }
