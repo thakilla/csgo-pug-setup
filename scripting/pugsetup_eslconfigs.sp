@@ -6,16 +6,18 @@
 #pragma semicolon 1
 #pragma newdecls required
 
+ConVar g_hMessageFormat;
+
 public Plugin myinfo = {
     name = "CS:GO PugSetup: load esl configs depending on team size",
     author = "ThaKilla",
-    description = "Load esl XonX configs depending on selected team size.",
+    description = "Load ESL XonX configs depending on selected team size.",
     version = PLUGIN_VERSION,
     url = "https://github.com/thakilla/csgo-pug-setup"
 };
 
 public void OnPluginStart() {
-	PrintToChatAll("Hello World");
+	g_hMessageFormat = CreateConVar("sm_pugsetup_eslconfigs_format", "--> Load ESL {TEAMSIZE}on{TEAMSIZE} Config", "Format of the eslconfigs output string.");
 }
 
 public void PugSetup_OnReadyToStart() {
@@ -31,4 +33,9 @@ public void PugSetup_OnReadyToStart() {
     char newConfig[PLATFORM_MAX_PATH];
     Format(newConfig, sizeof(newConfig), "live%don%d.cfg", playersPerTeam, playersPerTeam);
     configCvar.SetString(newConfig);
+	
+	char message[256];
+	g_hMessageFormat.GetString(message, sizeof(message));
+	ReplaceStringWithInt(message, sizeof(message), "{TEAMSIZE}", playersPerTeam);
+	PrintToChatAll(message);
 }
