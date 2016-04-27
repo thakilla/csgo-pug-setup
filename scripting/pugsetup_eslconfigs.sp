@@ -15,5 +15,20 @@ public Plugin myinfo = {
 };
 
 public void OnPluginStart() {
-	PugSetup_MessageToAll("%t", "TestMessage");
+	PrintToChatAll("Hello World");
+}
+
+public void PugSetup_OnReadyToStart() {
+    TeamType teamType;
+    MapType mapType;
+    int playersPerTeam;
+    bool recordDemo; 
+    bool knifeRound; 
+    bool autoLive;
+    PugSetup_GetSetupOptions(teamType, mapType, playersPerTeam, recordDemo, knifeRound, autoLive);
+
+    ConVar configCvar = FindConVar("sm_pugsetup_live_cfg");
+    char newConfig[PLATFORM_MAX_PATH];
+    Format(newConfig, sizeof(newConfig), "live%don%d.cfg", playersPerTeam, playersPerTeam);
+    configCvar.SetString(newConfig);
 }
