@@ -33,9 +33,9 @@ public void PugSetup_OnReadyToStart() {
     char newConfig[PLATFORM_MAX_PATH];
     Format(newConfig, sizeof(newConfig), "live%don%d.cfg", playersPerTeam, playersPerTeam);
     configCvar.SetString(newConfig);
-	
-	char message[256];
-	g_hMessageFormat.GetString(message, sizeof(message));
-	ReplaceStringWithInt(message, sizeof(message), "{TEAMSIZE}", playersPerTeam);
-	PrintToChatAll(message);
+
+    char message[256];
+    g_hMessageFormat.GetString(message, sizeof(message));
+    ReplaceStringWithInt(message, sizeof(message), "{TEAMSIZE}", playersPerTeam);
+    PrintToChatAll(message);
 }
