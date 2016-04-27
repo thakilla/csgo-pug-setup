@@ -32,5 +32,5 @@ public void PugSetup_OnReadyToStart() {
     Format(newConfig, sizeof(newConfig), "live%don%d.cfg", playersPerTeam, playersPerTeam);
     configCvar.SetString(newConfig);
 
-    PugSetup_MessageToAll("%t", "LoadESLConfigMessage", playersPerTeam);
+    PugSetup_MessageToAll("%t", "LoadESLConfigMessage", playersPerTeam, playersPerTeam);
 }

@@ -2,8 +2,8 @@
 {
 	"LoadESLConfigMessage"
 	{
-		"#format"	"{1:s}"
-		"en"		"ESL Config {GREEN}{1}on{1} {NORMAL}loaded"
-		"de"		"ESL Config {GREEN}{1}on{1} {NORMAL}geladen"
+		"#format"	"{1:s},{2:s}"
+		"en"		"ESL Config {GREEN}{1}on{2} {NORMAL}loaded"
+		"de"		"ESL Config {GREEN}{1}on{2} {NORMAL}geladen"
 	}
 }
