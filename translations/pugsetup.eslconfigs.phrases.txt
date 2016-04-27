@@ -1,0 +1,9 @@
+"Phrases"
+{
+	"LoadESLConfigMessage"
+	{
+		"#format"	"{1:s}"
+		"en"		"ESL Config {GREEN}{1}on{1} {NORMAL}loaded"
+		"de"		"ESL Config {GREEN}{1}on{1} {NORMAL}geladen"
+	}
+}

@@ -34,8 +34,5 @@ public void PugSetup_OnReadyToStart() {
     Format(newConfig, sizeof(newConfig), "live%don%d.cfg", playersPerTeam, playersPerTeam);
     configCvar.SetString(newConfig);
 
-    char message[256];
-    g_hMessageFormat.GetString(message, sizeof(message));
-    ReplaceStringWithInt(message, sizeof(message), "{TEAMSIZE}", playersPerTeam);
-    PrintToChatAll(message);
+    PugSetup_MessageToAll(playersPerTeam, "LoadESLConfigMessage");
 }
