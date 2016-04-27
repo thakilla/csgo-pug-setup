@@ -6,8 +6,6 @@
 #pragma semicolon 1
 #pragma newdecls required
 
-ConVar g_hMessageFormat;
-
 public Plugin myinfo = {
     name = "CS:GO PugSetup: load esl configs depending on team size",
     author = "ThaKilla",
