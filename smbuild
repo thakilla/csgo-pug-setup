@@ -10,7 +10,8 @@ addon_plugins = [
     'pugsetup_rwsbalancer',
     'pugsetup_teamlocker',
     'pugsetup_teamnames',
-	'pugsetup_eslconfigs',
+    'pugsetup_eslconfigs',
+    'pugsetup_teamspeak',
 ]
 pugsetup_plugins = ['pugsetup'] + addon_plugins
 
